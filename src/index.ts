@@ -18,7 +18,7 @@ export const Feedefy = ({ projectId }: { projectId: string }) => {
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      script.remove();
     };
   }, [projectId]);
 
