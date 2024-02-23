@@ -9,7 +9,7 @@ export const Feedefy = ({ projectId }: { projectId: string }) => {
 
     const script = document.createElement("script");
 
-    script.src = `https://app.feedefy.com/widget.js?id=${projectId}`;
+    script.src = `https://app.feedefy.com/embed.js?id=${projectId}`;
 
     script.defer = true;
 
