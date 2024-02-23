@@ -26,7 +26,7 @@ export const Feedefy = ({ projectId }: { projectId: string }) => {
     script.defer = true;
     script.addEventListener("error", () => script.remove());
 
-    document.head.appendChild(script);
+    document.body.appendChild(script);
 
     return () => {
       // const button = document.querySelector(".feedefy-floating-button");
