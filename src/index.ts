@@ -13,13 +13,6 @@ export const Feedefy = ({ projectId }: { projectId: string }) => {
       return;
     }
 
-    // // @ts-ignore
-    // if (window.feedefyInjected) {
-    //   return;
-    // }
-    // // @ts-ignore
-    // window.feedefyInjected = true;
-
     const script = document.createElement("script");
 
     script.src = `https://app.feedefy.com/embed.js?id=${projectId}`;
@@ -29,18 +22,7 @@ export const Feedefy = ({ projectId }: { projectId: string }) => {
     document.body.appendChild(script);
 
     return () => {
-      // const button = document.querySelector(".feedefy-floating-button");
-      // const widget = document.querySelector("iframe");
-      // console.log(widget);
-      // const widget2 = widget.querySelector(".feedefy-widget");
-      // console.log(widget2);
-      // if (widget) {
-      //   widget.remove();
-      // }
-      // if (button) {
-      //   button.remove();
-      // }
-      // script.remove();
+      script.remove();
     };
   }, [projectId]);
 
