@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const Feedefy = ({ projectId }: { projectId: string }) => {
+export const Feedefy = ({ projectId, lang }: { projectId: string; lang?: string }) => {
   useEffect(() => {
     if (!projectId) {
       console.error("No projectId was passed to Feedefy React, widget will not be initialized");
@@ -15,6 +15,10 @@ export const Feedefy = ({ projectId }: { projectId: string }) => {
 
     const script = document.createElement("script");
 
+    if (lang) {
+      script.lang = lang;
+    }
+
     script.src = `https://app.feedefy.com/embed.js?id=${projectId}`;
     script.defer = true;
     script.addEventListener("error", () => script.remove());
@@ -24,7 +28,7 @@ export const Feedefy = ({ projectId }: { projectId: string }) => {
     return () => {
       script.remove();
     };
-  }, [projectId]);
+  }, [projectId, lang]);
 
   return null;
 };
